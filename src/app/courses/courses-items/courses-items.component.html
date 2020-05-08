@@ -1,0 +1,6 @@
+<li class="list-group-item"    [ngClass]="{'list-group-item-success': course.isAvailabel , 'list-group-item-danger' :!course.isAvailabel}" (click)="onClick()" [routerLink]="['/courses',course.id]" queryParamsHandling='preserve'>
+
+        -course:- {{course.title}} with instructor:- {{course.instructor}}         
+    
+</li>
+ 

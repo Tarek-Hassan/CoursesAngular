@@ -1,0 +1,29 @@
+<div style=" padding:50px;background-color: antiquewhite;">
+    <div class="form-group">
+        <label for="userName">Search:</label>
+        <input type="text"  (change)="search($event)" class="form-control" placeholder="EnterCourseName" name="search">
+    </div>
+      <hr />
+  <button type="submit" class="btn btn-info" [routerLink]="['/courses','new']" style="float:right;">new</button>
+  <!-- Example single danger button -->
+  <div>
+    <select name="limit" id="limit"  (change)="onLimitChange($event)" >
+        <option value="10">defualt</option>
+        <option value="1">1</option>
+        <option value="5">5</option> 
+        <option value="10">10</option>
+    </select>
+
+  </div>
+  <br />
+  <br />
+  <div class="row" style="background-color: antiquewhite;">
+    <div class="col">
+      <app-courses-list></app-courses-list>
+    </div>
+    <div class="col">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+
+</div>

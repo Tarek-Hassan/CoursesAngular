@@ -1,0 +1,21 @@
+
+    <div class="row">
+        <div class="col">
+            <ul class="list-group" >
+                <app-courses-items *ngFor="let course of courses"  [courseInfo]="course"(coursesClick)="onCoursesClick($event)" (click)="onClickItem(course)"></app-courses-items>
+            </ul>
+        </div>
+        
+        <!-- [title]="course.title" [instructor]="course.instructor" [isAvailable]="course.isAvailable" -->
+        <!-- <div class="col">
+                <app-coursesdetails></app-coursesdetails>
+                <router-outlet></router-outlet>
+        </div> -->
+    </div> 
+    <nav aria-label="...">
+        <ul class="pagination">
+          <li *ngFor="let page of pages; index as i" class="page-item" [ngClass]="{active: currentPage == i+1}" [routerLink]="['/courses']" [queryParams]="{page:i+1}" queryParamsHandling='merge'>
+              <a class="page-link">{{i+1}}</a>
+            </li>
+        </ul>
+      </nav>

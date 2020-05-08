@@ -1,0 +1,16 @@
+<div *ngIf="course else nocourse " style="border:2px solid;background-color:darksalmon" class="text-center font-weight-bolder">
+<div class="my-5" >
+  <p>Id:{{course.id}}</p>
+  <p>courseName :{{course.title}}</p>
+  <p>InstracatorName:{{course.instructor}}</p>
+  <p>isFree:{{course.isFree?' Free':'NOT Free'}}</p>
+  <p>price:{{course.price==0? 'NO Money': course.price }}</p>
+  <p>Available:{{course.isAvailabel? 'Availabel':'NOT Availabel'}}</p>
+
+</div>
+</div>
+<ng-template #nocourse>
+  <div style="border:2px solid ;background-color: darksalmon" class="my-4 justify-content-center">
+    <p>No Course Selected</p>
+  </div>
+</ng-template>
